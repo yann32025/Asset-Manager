@@ -3,21 +3,21 @@ import { useEffect, useRef, useState } from "react";
 const ADS = [
   {
     title: "Crédit Immobilier",
-    subtitle: "Réalisez votre projet maison avec BNP Paribas",
+    subtitle: "Réalisez votre projet maison avec CaixaBankNow",
     cta: "Simuler",
-    gradient: "linear-gradient(135deg, #003d26, #00915A)",
+    gradient: "linear-gradient(135deg, #001f4d, #006BB6)",
     emoji: "🏠",
   },
   {
     title: "Assurance Vie",
     subtitle: "Préparez votre avenir avec nos solutions d'épargne",
     cta: "Découvrir",
-    gradient: "linear-gradient(135deg, #1a237e, #3949ab)",
+    gradient: "linear-gradient(135deg, #003082, #009EE0)",
     emoji: "🛡️",
   },
   {
     title: "Offre Bienvenue",
-    subtitle: "Ouvrez un Livret A et profitez d'avantages exclusifs",
+    subtitle: "Ouvrez un Livret d'épargne et profitez d'avantages exclusifs",
     cta: "J'en profite",
     gradient: "linear-gradient(135deg, #b8420a, #e67e22)",
     emoji: "🎁",
@@ -31,9 +31,9 @@ const ADS = [
   },
   {
     title: "Prêt Personnel",
-    subtitle: "Financement rapide jusqu'à 75 000€ sans justificatif",
+    subtitle: "Financement rapide jusqu'à 75 000 € sans justificatif",
     cta: "Calculer",
-    gradient: "linear-gradient(135deg, #0d47a1, #1565c0)",
+    gradient: "linear-gradient(135deg, #005a8e, #009EE0)",
     emoji: "💶",
   },
 ];
@@ -67,7 +67,6 @@ export default function AdsCarousel() {
         className="rounded-2xl p-5 relative overflow-hidden shadow-lg transition-all duration-500"
         style={{ background: ad.gradient, minHeight: 130 }}
       >
-        {/* Decorative circle */}
         <div className="absolute right-4 top-1/2 -translate-y-1/2 w-24 h-24 rounded-full opacity-20"
           style={{ background: "rgba(255,255,255,0.3)" }} />
         <div className="absolute right-12 -top-4 w-16 h-16 rounded-full opacity-10"
@@ -75,7 +74,7 @@ export default function AdsCarousel() {
 
         <div className="flex items-center justify-between">
           <div className="flex-1">
-            <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Offre BNP Paribas</p>
+            <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Offre CaixaBankNow</p>
             <p className="text-white font-bold text-lg leading-snug mb-1">{ad.title}</p>
             <p className="text-white/80 text-xs mb-4 leading-relaxed">{ad.subtitle}</p>
             <button
@@ -88,7 +87,6 @@ export default function AdsCarousel() {
           <div className="text-5xl ml-4 flex-shrink-0">{ad.emoji}</div>
         </div>
 
-        {/* Dots */}
         <div className="flex gap-1.5 mt-4">
           {ADS.map((_, i) => (
             <button

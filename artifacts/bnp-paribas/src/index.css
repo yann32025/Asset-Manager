@@ -30,23 +30,32 @@
 :root {
   --background: 0 0% 97%;
   --foreground: 220 20% 15%;
-  --border: 155 30% 85%;
-  --input: 155 30% 85%;
-  --ring: 155 70% 28%;
+  --border: 210 40% 85%;
+  --input: 210 40% 85%;
+  --ring: 210 90% 36%;
   --card: 0 0% 100%;
   --card-foreground: 220 20% 15%;
-  --primary: 155 70% 28%;
+  --primary: 210 90% 36%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 155 30% 92%;
-  --secondary-foreground: 155 70% 20%;
-  --muted: 155 20% 94%;
+  --secondary: 200 60% 92%;
+  --secondary-foreground: 210 90% 25%;
+  --muted: 210 30% 94%;
   --muted-foreground: 220 10% 45%;
-  --accent: 155 50% 88%;
-  --accent-foreground: 155 70% 20%;
+  --accent: 200 70% 88%;
+  --accent-foreground: 210 90% 20%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
   --app-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --radius: 0.5rem;
+}
+
+/* CaixaBank brand */
+:root {
+  --caixa-blue: #006BB6;
+  --caixa-cyan: #009EE0;
+  --caixa-dark: #003082;
+  --caixa-light: #e8f4ff;
+  --caixa-border: #b3d9f5;
 }
 
 @layer base {
@@ -54,37 +63,22 @@
   body { @apply font-sans antialiased bg-background text-foreground; margin: 0; }
 }
 
-/* BNP Brand colors */
-.bnp-green { color: #00915A; }
-.bnp-bg { background-color: #00915A; }
-.bnp-dark { background-color: #006B42; }
-
 /* Loading animation */
 @keyframes progress-fill {
   0% { width: 0%; }
   100% { width: 100%; }
 }
-
-.progress-animate {
-  animation: progress-fill 3s ease-in-out forwards;
-}
+.progress-animate { animation: progress-fill 3s ease-in-out forwards; }
 
 /* Visa card gradient */
 .visa-card {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-}
-
-/* Tab active underline */
-.tab-active {
-  border-bottom: 3px solid #00915A;
-  color: #00915A;
+  background: linear-gradient(135deg, #001f4d 0%, #003082 50%, #006BB6 100%);
 }
 
 /* Smooth transitions */
 .section-fade {
   animation: fadeIn 0.3s ease-in-out;
 }
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
@@ -98,7 +92,6 @@
   transition: background 0.2s;
   cursor: pointer;
 }
-
 .toggle-thumb {
   width: 20px;
   height: 20px;

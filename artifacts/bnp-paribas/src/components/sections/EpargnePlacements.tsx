@@ -2,22 +2,20 @@ import { TrendingUp, PiggyBank, BarChart2, Lock } from "lucide-react";
 
 export default function EpargnePlacements() {
   const produits = [
-    { name: "Livret A", solde: "0,00 €", taux: "3,00 %", icon: <PiggyBank size={18} />, color: "#00915A" },
-    { name: "LDDS", solde: "0,00 €", taux: "3,00 %", icon: <PiggyBank size={18} />, color: "#0070c0" },
+    { name: "Livret d'épargne", solde: "0,00 €", taux: "3,00 %", icon: <PiggyBank size={18} />, color: "#006BB6" },
+    { name: "LDDS", solde: "0,00 €", taux: "3,00 %", icon: <PiggyBank size={18} />, color: "#009EE0" },
     { name: "PEL", solde: "0,00 €", taux: "2,25 %", icon: <TrendingUp size={18} />, color: "#7b2d8b" },
-    { name: "Compte épargne", solde: "900,0000 €", taux: "0,10 %", icon: <BarChart2 size={18} />, color: "#e67e22" },
+    { name: "Compte épargne", solde: "500.000 €", taux: "0,10 %", icon: <BarChart2 size={18} />, color: "#e67e22" },
   ];
-
-  const totalEpargne = 900.0;
 
   return (
     <div className="flex flex-col gap-4">
       <h2 className="font-bold text-lg text-gray-800">Épargne & Placements</h2>
 
       {/* Total */}
-      <div className="rounded-2xl p-4 text-white shadow-lg" style={{ background: "linear-gradient(135deg, #006B42, #00915A)" }}>
+      <div className="rounded-2xl p-4 text-white shadow-lg" style={{ background: "linear-gradient(135deg, #003082, #006BB6)" }}>
         <p className="text-white/70 text-xs uppercase tracking-widest mb-1">Total épargne</p>
-        <p className="text-3xl font-bold">900,0000 €</p>
+        <p className="text-3xl font-bold">500.000 €</p>
         <div className="mt-3 flex items-center gap-2">
           <Lock size={13} className="text-white/60" />
           <p className="text-white/60 text-xs">Compte bloqué — accès restreint</p>
@@ -38,9 +36,7 @@ export default function EpargnePlacements() {
                 <p className="text-xs text-gray-400">Taux : {p.taux}/an</p>
               </div>
             </div>
-            <div className="text-right">
-              <p className="font-bold text-sm text-gray-800">{p.solde}</p>
-            </div>
+            <p className="font-bold text-sm text-gray-800">{p.solde}</p>
           </div>
         ))}
       </div>
@@ -50,17 +46,17 @@ export default function EpargnePlacements() {
         <p className="font-bold text-gray-800 mb-3">Simulation d'intérêts</p>
         <div className="grid grid-cols-3 gap-2">
           {[
-            { period: "1 an", gain: "+0,90 €", taux: "0,10 %" },
-            { period: "3 ans", gain: "+2,70 €", taux: "0,10 %" },
-            { period: "5 ans", gain: "+4,51 €", taux: "0,10 %" },
+            { period: "1 an", gain: "+500 €" },
+            { period: "3 ans", gain: "+1 500 €" },
+            { period: "5 ans", gain: "+2 502 €" },
           ].map((s, i) => (
-            <div key={i} className="rounded-xl p-3 text-center" style={{ background: "#f0faf5" }}>
+            <div key={i} className="rounded-xl p-3 text-center" style={{ background: "#e8f4ff" }}>
               <p className="text-xs text-gray-500 mb-1">{s.period}</p>
-              <p className="font-bold text-sm" style={{ color: "#00915A" }}>{s.gain}</p>
+              <p className="font-bold text-sm" style={{ color: "#006BB6" }}>{s.gain}</p>
             </div>
           ))}
         </div>
-        <p className="text-xs text-gray-400 mt-2">Simulation basée sur le taux actuel de 0,10% (hors fiscalité).</p>
+        <p className="text-xs text-gray-400 mt-2">Simulation basée sur le taux actuel de 0,10 % (hors fiscalité).</p>
       </div>
     </div>
   );
